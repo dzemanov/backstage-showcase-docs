@@ -2,6 +2,18 @@
 
 There are several different methods for running the Backstage Showcase app today. We currently have support for running the application locally, using a helm chart to deploy to a cluster, and manifests for deployment using ArgoCD.
 
+## Mermaid section
+
+Here is a mermaid graph!
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
 ## Telemetry collection
 
 The telemetry data collection feature is used to enhance your experience with the application.
@@ -39,7 +51,7 @@ Add the following code in your Helm configuration file:
 global:
   dynamic:
     plugins:
-      - package: './dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment'
+      - package: "./dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment"
         disabled: true
 ```
 
@@ -70,7 +82,7 @@ However, if you run your application using the `dynamic-plugins.default.yaml` fi
 ```yaml
 dynamicPlugins:
   plugins:
-    - package: './dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment'
+    - package: "./dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment"
       disabled: true
 ```
 
@@ -94,7 +106,7 @@ Add the following code in your Helm configuration file:
 global:
   dynamic:
     plugins:
-      - package: './dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment'
+      - package: "./dynamic-plugins/dist/backstage-community-plugin-analytics-provider-segment"
         disabled: false
 ```
 
@@ -334,12 +346,12 @@ The easiest and fastest method for getting started: Backstage Showcase app, runn
      - If using a private Nexus Repository Manager instance, you will need to add an Authorization header for the nexus proxy in your `app-config.yaml` or `app-config.local.yaml`:
 
        ```yaml
-       '/nexus-repository-manager':
+       "/nexus-repository-manager":
          target: ${NEXUS_REPOSITORY_MANAGER_URL}
          headers:
-           X-Requested-With: 'XMLHttpRequest'
+           X-Requested-With: "XMLHttpRequest"
            # Uncomment the following line to access a private Nexus Repository Manager using a token
-           Authorization: 'Bearer ${NEXUS_REPOSITORY_MANAGER_TOKEN}'
+           Authorization: "Bearer ${NEXUS_REPOSITORY_MANAGER_TOKEN}"
        ```
 
        - `${NEXUS_REPOSITORY_MANAGER_TOKEN}` (Only for private Nexus Repository Manager instances): Nexus instance API token (see [documentation](https://help.sonatype.com/repomanager3/nexus-repository-administration/user-authentication/user-tokens)) with `nx-repository-view-*-*-read` [permissions](https://help.sonatype.com/repomanager3/nexus-repository-administration/access-control/privileges), or read permissions to view all the repositories you want to display in the plugin.
@@ -373,10 +385,10 @@ The Kubernetes plugin has a default API factory that work right out the box with
 ```yaml
 kubernetes:
   clusterLocatorMethods:
-    - type: 'config'
+    - type: "config"
       clusters:
-        authProvider: 'oidc'
-        oidcTokenProvider: 'oidc'
+        authProvider: "oidc"
+        oidcTokenProvider: "oidc"
 ```
 
 ## Running with Helm
