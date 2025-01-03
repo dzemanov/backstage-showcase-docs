@@ -4,7 +4,7 @@ There are several different methods for running the Backstage Showcase app today
 
 ## Mermaid section
 
-Here is a mermaid graph!
+Here is a mermaid graph
 
 ```mermaid
 graph TD;
