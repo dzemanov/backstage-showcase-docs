@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage-showcase5
-  title: Backstage Showcase 5
+  name: backstage-showcase-mermaid
+  title: Backstage Showcase With Mermaid
   description: |
     This is the Janus Community Showcase of Backstage.io
   links:
